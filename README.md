@@ -5,24 +5,23 @@
 # <center>Proyecto</center>
 
 
-## <center>Universidad de Guadalajara</center>
+### <center>Universidad de Guadalajara</center>
 
-### <center>Centro Universitario de Ciencias Exactas e Ingenierías</center>
+#### <center>Centro Universitario de Ciencias Exactas e Ingenierías</center>
 
-### <center>División de Electrónica y Computación</center>
+#### <center>División de Electrónica y Computación</center>
 
-### <center>Departamento de Ciencias Computacionales</center>
+#### <center>Departamento de Ciencias Computacionales</center>
 
-### <center>Ingeniería en Computación</center>
+#### <center>Ingeniería en Computación</center>
 
-## <center>Seminario de Solución de Problemas de Traductores de Lenguajes II</center>
+### <center>Seminario de Solución de Problemas de Traductores de Lenguajes II</center>
 
-### <center>Profesor: López Franco, Michel Emanuel</center>
+#### <center>Profesor: López Franco, Michel Emanuel</center>
 
-## <center>César Arley Ojeda Escobar</center>
+### <center>César Arley Ojeda Escobar</center>
 
 ## Modulos
-***
 + Módulo 1: Los símbolos léxicos del compilador.
 + Módulo 2: Ejemplos LR(1)
 + Módulo 3: Practica de analizador Sintáctico LR
