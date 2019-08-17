@@ -2,6 +2,8 @@
 
 ## Símbolos analizados hasta el momento
 
+![Automata v0.1](../../assets/images/01-automata.svg?sanitize=true)
+
 + Identificadores
 + Enteros
 + Reales

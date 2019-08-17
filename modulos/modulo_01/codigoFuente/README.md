@@ -2,12 +2,12 @@
 
 ## Autómata
 
-![hola](../../../assets/images/01-automata.svg?sanitize=true)
+![Automata v0.1](../../../assets/images/01-automata.svg?sanitize=true)
 
 ## Símbolos analizados hasta el momento
 
 + Identificadores
 + Enteros
 + Reales
-<!-- 
-![Automata v0.1](https://raw.github.com/CodeRevenge/proyecto-seminario-traductores-ii/tree/modulo01/v0.1/assets/images/automata.svg?sanitize=true) -->
+
+[Aquí](https://github.com/CodeRevenge/proyecto-seminario-traductores-ii/tree/master/modulos/modulo_01/simbolos_lexicos.pdf) se encuentran las especificaciones minimas para este módulo proporcionadas por el Ingeniero Michel Emanuel López Franco
