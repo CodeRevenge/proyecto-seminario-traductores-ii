@@ -21,14 +21,14 @@ def main():
 
         # Imprimimos unos titulos para mejor entendimiento
         print("\n\nResultado del analisis lexico:")
-        print("\nSimbolo\t\t\tTipo")
+        print("\nSimbolo\t\t\t\tTipo\t\t\t\tCodigo de Tipo")
 
         # Realizamos un ciclo que continue hasta que el simobolo sea un $
         while analizador.caracter != "$":
             # Analizamos el primer simbolo de la cadena
             analizador.siguienteSimbolo()
             # Imprimimos el simbolo junto al tipo de cadena
-            print(analizador.simbolo + "\t\t\t" + analizador.tipoCadena(analizador.tipo))
+            print(analizador.simbolo + "\t\t\t\t" + analizador.tipoCadena(analizador.tipo) + "\t\t\t\t" + str(analizador.tipo))
     # Fin del if-else
 
 if __name__ == '__main__':
