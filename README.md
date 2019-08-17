@@ -1,6 +1,6 @@
-<img src="assets/images/Escudo_UDG.png" width="100px" alt="logo udg">
+<div style="display: inline-block; margin-left: 100px"> <img src="assets/images/Escudo_UDG.png" width="100px" alt="logo udg"> </div>
 
-<img style="align:left" src="assets/images/Escudo_CUCEI.png" width="100px" alt="logo cucei">
+<div style="display: inline-block; margin-left: 300px"><img style="align:left" src="assets/images/Escudo_CUCEI.png" width="100px" alt="logo cucei"> </div>
 
 # <center>Proyecto</center>
 
