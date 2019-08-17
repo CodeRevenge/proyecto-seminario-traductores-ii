@@ -35,7 +35,8 @@ class TipoCadena:
         self.ELSE = 30
         self.INT = 31
         self.FLOAT = 32
-        self.PESO = 33
+        self.VOID = 33
+        self.PESO = 34
 
 # class Estados:
 #     "Clase que define los metodos de cada estado"
@@ -70,7 +71,13 @@ class AnalizadorLexico(TipoCadena):
             self.ENTERO: self.m_ENTERO,
             self.REAL: self.m_REAL,
             self.CADENA: self.m_CADENA,
-
+            self.IF: self.m_IF,
+            self.WHILE: self.m_WHILE,
+            self.RETURN: self.m_RETURN,
+            self.ELSE: self.m_ELSE,
+            self.INT: self.m_INT,
+            self.FLOAT: self.m_FLOAT,
+            self.VOID: self.m_VOID,
             self.PESO: self.m_PESO
         }
 
@@ -121,19 +128,37 @@ class AnalizadorLexico(TipoCadena):
 
         # Terminamos el automata
 
-        switch = {
-            -1: self.error, # ERROR
-            2: self.tipo00, # Identificador
-            3: self.tipo01, # Entero
-            5: self.tipo02, # Real
-            7: self.tipo03, # Cadena
+        if self.tipo < 27 or self.tipo > 33:
 
-            33: self.tipo33 # Peso
+            switch = {
+                -1: self.error, # ERROR
+                2: self.tipo00, # Identificador
+                3: self.tipo01, # Entero
+                5: self.tipo02, # Real
+                7: self.tipo03, # Cadena
+                27: self.tipo27,
+                28: self.tipo28,
+                29: self.tipo29,
+                30: self.tipo30,
+                31: self.tipo31,
+                32: self.tipo32,
+                33: self.tipo33,
+                34: self.tipo34 # Peso
+            }
+
+            switch.get(self.estado, self.error)()
+
+    def verificarPelabraReservada(self, simbolo):
+        palabrasReservadas = {
+            "int": self.INT,
+            "float": self.FLOAT,
+            "void": self.VOID,
+            "if": self.IF,
+            "while": self.WHILE,
+            "return": self.RETURN,
+            "else": self.ELSE
         }
-
-        switch.get(self.estado, self.error)()
-
-
+        self.tipo = palabrasReservadas.get(simbolo, self.tipo)
 
     def siguienteCaracter(self):
         """Determina el siguiente caracter
@@ -156,23 +181,12 @@ class AnalizadorLexico(TipoCadena):
         if not self.esPeso(self.caracter):
             self.indice -= 1
         self.continua = False
-    
-    # def encontrarEspacio(self):
-    #     self.continua = False
-    #     self.estado = -1
-    #     if self.terminado():
-    #         self.caracter = "$"
-    #         return
-
-    #     for x in range(self.indice, len(self.cadena)):
-    #         self.simbolo += self.caracter + self.cadena[x]
-    #         self.caracter = ""
-    #         if self.esEspacio(self.cadena[x]):
-    #             self.indice = x+1
-    #             break
+        self.verificarPelabraReservada(self.simbolo)
 
     def terminado(self):
         return self.indice >= len(self.cadena)
+
+
 
     # Definimos funciones que evaluan el tipo de caracter
 
@@ -208,6 +222,48 @@ class AnalizadorLexico(TipoCadena):
 
     def esDivision(self, caracter):
         return caracter == "/"
+
+    def esMayorQue(self, caracter):
+        return caracter == ">"
+
+    def esMenorQue(self, caracter):
+        return caracter == "<"
+
+    def esPipe(self, caracter):
+        return caracter == "|"
+
+    def esAmpersand(self, caracter):
+        return caracter == "/"
+
+    def esFactorial(self, caracter):
+        return caracter == "!"
+
+    def esPuntoYComa(self, caracter):
+        return caracter == ";"
+
+    def esComa(self, caracter):
+        return caracter == ","
+
+    def esParentesisAbierto(self, caracter):
+        return caracter == "("
+
+    def esParentesisCerrado(self, caracter):
+        return caracter == ")"
+
+    def esLlaveAbierta(self, caracter):
+        return caracter == "{"
+
+    def esLlaveCerrada(self, caracter):
+        return caracter == "}"
+
+    def esBracketAbierto(self, caracter):
+        return caracter == "["
+
+    def esBracketCerrado(self, caracter):
+        return caracter == "]"
+
+    def esIgual(self, caracter):
+        return caracter == "="
     
     # Definimos todos los estados
 
@@ -236,6 +292,7 @@ class AnalizadorLexico(TipoCadena):
             self.siguienteEstado(2)
         elif self.esEspacio(self.caracter):
             self.continua = False
+            self.verificarPelabraReservada(self.simbolo)
         else:
             self.retroceso()
 
@@ -293,7 +350,28 @@ class AnalizadorLexico(TipoCadena):
     def tipo03(self):
         self.tipo = self.CADENA
 
+    def tipo27(self):
+        self.tipo = self.PESO
+
+    def tipo28(self):
+        self.tipo = self.PESO
+
+    def tipo29(self):
+        self.tipo = self.PESO
+
+    def tipo30(self):
+        self.tipo = self.PESO
+
+    def tipo31(self):
+        self.tipo = self.PESO
+
+    def tipo32(self):
+        self.tipo = self.PESO
+
     def tipo33(self):
+        self.tipo = self.PESO
+    
+    def tipo34(self):
         self.tipo = self.PESO
 
     
@@ -316,3 +394,24 @@ class AnalizadorLexico(TipoCadena):
 
     def m_CADENA(self):
         self.tipoCadenaMensaje = "Cadena"
+
+    def m_IF(self):
+        self.tipoCadenaMensaje = "If"
+
+    def m_WHILE(self):
+        self.tipoCadenaMensaje = "While"
+
+    def m_RETURN(self):
+        self.tipoCadenaMensaje = "Return"
+
+    def m_ELSE(self):
+        self.tipoCadenaMensaje = "Else"
+
+    def m_INT(self):
+        self.tipoCadenaMensaje = "Int"
+
+    def m_FLOAT(self):
+        self.tipoCadenaMensaje = "Float"
+
+    def m_VOID(self):
+        self.tipoCadenaMensaje = "Void"
