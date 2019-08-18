@@ -5,6 +5,37 @@
 + Identificadores
 + Enteros
 + Reales
++ Cadenas
++ Operador de suma
++ Operador de resta
++ Operador de multiplicación
++ Operador de división
++ Operador menor que
++ Operador menor o igual que
++ Operador mayor que
++ Operador mayor o igual que
++ Operador OR
++ Operador AND
++ Operador NOT
++ Operador es igual a
++ Operador es diferente de
++ Operador igual
++ Punto y coma
++ Coma
++ Dos putos
++ Parentesis abierto
++ Parentesis cerrado
++ Llave abierta
++ Llave cerrada
++ Bracket abierto
++ Bracket cerrado
++ Palabra reservada: int
++ Palabra reservada: float
++ Palabra reservada: void
++ Palabra reservada: if
++ Palabra reservada: while
++ Palabra reservada: return
++ Palabra reservada: else
 
 ## Muentra del AFD
 ![Automata v0.2](/assets/images/01-automata.svg?sanitize=true)

@@ -10,8 +10,7 @@ def main():
         cadena = str(input("Escribe una cadena: "))
     else:
         # Valido para python 2.x
-        # cadena = str(raw_input("Escribe una cadena: "))
-        cadena = str(input("Escribe una cadena: "))
+        cadena = str(raw_input("Escribe una cadena: "))
     # Verificamos que la cadena no este vacia
     if len(cadena) <= 0:
         print(cadena + " No es una cadena valida")
