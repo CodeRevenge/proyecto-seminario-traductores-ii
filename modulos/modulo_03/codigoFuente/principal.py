@@ -1,26 +1,32 @@
 # -*- coding: utf-8 -*-
 import sys
-from tkinter import 
+from tkinter import Tk
+from tkinter import messagebox
+from tkinter.filedialog import askopenfilename
 from analizadorSintactico import AnalizadorSintactico
 
+def abrir_archivo():
+    root = Tk()
+    root.withdraw()
+    direccion = ""
+    instrucciones = ''
+    while not direccion:
+        direccion = askopenfilename(initialdir="./", filetypes=[("C", "*.c")])
+        if not direccion:
+            if not messagebox.askretrycancel(message="No se selecciono ningun archivo, ¿Desea reintentarlo?", title="No se selecciono archivo"):
+                return False
+    archivo = open(direccion, "r")
+    instrucciones = archivo.readlines()
+    instrucciones = ' '.join(map(str.strip,instrucciones))
+    archivo.close()
+    return instrucciones
+
 def main():
+    cadena = abrir_archivo()
+    if not cadena:
+        return
 
-
-
-    # Para evitar errores de compativilidad verificamos la version de python
-    # Valido para python 3.x o superiores
-    if sys.version_info >= (3,0):
-        # Recibimos cadena y la convertimos a un string
-        cadena = str(input("Escribe una cadena: "))
-    else:
-        # Valido para python 2.x
-        # cadena = str(raw_input("Escribe una cadena: "))
-        pass
-
-    
-    # Imprimimos unos titulos para mejor entendimiento
-    print("\n\nResultado del analisis sintáctico:")
-
+    # cadena = input('Escribe la cadena a analizar: ')
     # Verificamos que la cadena no este vacia
     if len(cadena) <= 0:
         print(cadena + " No es una cadena valida")
@@ -29,11 +35,8 @@ def main():
         # resultado = analizador.analizadorSintactico(cadena)
         resultado = analizador.analizadorSintacticoEnteros(cadena)
         if resultado:
-            print("\n\nLa cadena es valida\n\n")
-        else:
-            print("\n\nLa cadena es invalida\n\n")
+            print("El código compilo correctamente")
     # Fin del if-else
 
 if __name__ == '__main__':
     main()
-    input('Pulsa una tecla para salir...')
