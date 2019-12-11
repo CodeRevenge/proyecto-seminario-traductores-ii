@@ -1,6 +1,5 @@
 float a,b,c;
-int a,b,c;
-float hola;
+int hola;
 int f(float z){
     float y;
 }
@@ -15,6 +14,5 @@ void h(){
     }
     if(a && 20){
         c = f(a,b);
-        c = a + c;
     }
 }
