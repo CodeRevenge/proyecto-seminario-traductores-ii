@@ -73,7 +73,7 @@ Esta prueba es más sencilla, pues solo es una función y una condicional.
 
 ![Arbol](ss/t2_arbol.png)
 
-Al final de la tercera imagen podemos ver el mensaje de que el código compilo correctamente.
+Al final de la imagen podemos ver el mensaje de que el código compilo correctamente.
 
 ### Prueba 03
 
@@ -92,7 +92,7 @@ Es parecida a la anterior prueba, pero en este caso no tenemos definición de va
 
 ![Arbol](ss/t3_arbol.png)
 
-Al final de la tercera imagen podemos ver el mensaje de que el identificador a no esta definido.
+Al final de la imagen podemos ver el mensaje de que el identificador a no esta definido.
 
 ### Prueba 4
 
@@ -110,4 +110,4 @@ En esta pruba tenemos una variable y una función con el mismo identificador, po
 
 ![Arbol](ss/t4_arbol.png)
 
-Al final de la tercera imagen podemos ver el mensaje de que el nombre a ya esta definido.
+Al final de la imagen podemos ver el mensaje de que el nombre a ya esta definido.
