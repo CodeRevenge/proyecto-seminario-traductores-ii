@@ -94,7 +94,7 @@ Es parecida a la anterior prueba, pero en este caso no tenemos definición de va
 
 Al final de la tercera imagen podemos ver el mensaje de que el identificador a no esta definido.
 
-### Prueba 03
+### Prueba 4
 
 El contenido del archivo es el siguiente:
 <pre>
