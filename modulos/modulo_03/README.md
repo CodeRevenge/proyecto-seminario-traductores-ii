@@ -1,55 +1,113 @@
-# Módulo 2: Ejemplos LR(1)
+# Proyecto Seminario de Solución de Problemas de Traductores de Lenguajes II
 
-Utilizando el autómata del módulo 1, se implementara un analizador sintáctico utilizando la tabla **LR(1)** para diferentes gramaticas
++ Analizador Léxico
++ Analizador Sintáctico
++ Analizador Semántico
 
-## Gramaticas
+## Como utilizar
+Es necesario tener instalado python en su versión más reciente, además de `tkinter`.
 
-+ `E → id + E | id`
+Ejecutar en una consola el siguiente comando:
+<pre>
+python principal.py
+</pre>
 
-## Especificaciones de módulo
+Se abrira una ventana donde podemos elegir el archivo con terminación `.c` que queremos analizar.
 
-[Aquí](/modulos/modulo_02/EjemplosPractica2.pdf) se encuentran las especificaciones minimas para este módulo proporcionadas por el Ingeniero Michel Emanuel López Franco
+![Abrir archivo](ss/abrir.png)
 
-## Ejercicio a realizar
+## Pruebas
+Tenemos cuatro pruebas diferentes
 
-Del documento [EjemploPractica2.pdf](/modulos/modulo_02/EjemplosPractica2.pdf) se realizara el ejercicio 1 de la segunda página.
+### Prueba 01
 
-## Tabla de símbolos
-Símbolo ID | Código entero
--- | :--:
-Peso | -1
-Identificadores | 0
-Enteros | 1
-Reales | 2
-Cadenas | 3
-Tipo | 4
-Operador de suma | 5
-Operador de resta | 6
-Operador de multiplicación | 7
-Operador de división | 8
-Operador OR | 9
-Operador AND | 10
-Operador NOT | 11
-Operador mayor que | 12
-Operador menor que | 13
-Operador mayor o igual que | 14
-Operador menor o igual que | 15
-Operador igual | 16
-Operador es igual a | 17
-Operador es diferente de | 18
-Punto y coma | 19
-Coma | 20
-Parentesis abierto | 21
-Parentesis cerrado | 22
-Llave abierta | 23
-Llave cerrada | 24
-Bracket abierto | 25
-Bracket cerrado | 26
-Dos putos | 27
-Palabra reservada: if | 50
-Palabra reservada: while | 51
-Palabra reservada: return | 52
-Palabra reservada: else | 53
-Palabra reservada: int | 54
-Palabra reservada: float | 55
-Palabra reservada: void | 56
+El contenido del archivo es el siguiente:
+<pre>
+float a,b,c;
+int hola;
+int f(float z){
+    float y;
+}
+void main(int a, int b){
+    if(a == b){
+        return a;
+    }
+}
+void h(){
+    while(hola){
+        return b;
+    }
+    if(a && 20){
+        c = f(a,b);
+    }
+}
+</pre>
+
+Esta prueba trata de verificar todos las reglas del compilador.
+
+Una vez seleccionado el archivo, comenzara el analisis y nos mostrara el arbol.
+
+![Arbol parte 1](ss/arbol1.png)
+![Arbol parte 2](ss/arbol2.png)
+![Arbol parte 3](ss/arbol3.png)
+
+Al final de la tercera imagen podemos ver el mensaje de que el código compilo correctamente.
+
+### Prueba 02
+
+El contenido del archivo es el siguiente:
+<pre>
+int main(){
+    int a,b;
+    a = 10;
+    b = 20;
+    if(a == b){
+        return a;
+    }
+}
+</pre>
+
+Una vez seleccionado el archivo, comenzara el analisis y nos mostrara el arbol.
+
+Esta prueba es más sencilla, pues solo es una función y una condicional.
+
+![Arbol](ss/t2_arbol.png)
+
+Al final de la tercera imagen podemos ver el mensaje de que el código compilo correctamente.
+
+### Prueba 03
+
+El contenido del archivo es el siguiente:
+<pre>
+int main(){
+    if(a == b){
+        return a;
+    }
+}
+</pre>
+
+Una vez seleccionado el archivo, comenzara el analisis y nos mostrara el arbol.
+
+Es parecida a la anterior prueba, pero en este caso no tenemos definición de variables por lo que se genera un error.
+
+![Arbol](ss/t3_arbol.png)
+
+Al final de la tercera imagen podemos ver el mensaje de que el identificador a no esta definido.
+
+### Prueba 03
+
+El contenido del archivo es el siguiente:
+<pre>
+int a;
+int a(){
+    return a;
+}
+</pre>
+
+Una vez seleccionado el archivo, comenzara el analisis y nos mostrara el arbol.
+
+En esta pruba tenemos una variable y una función con el mismo identificador, por lo que nos debe mostrar un error.
+
+![Arbol](ss/t4_arbol.png)
+
+Al final de la tercera imagen podemos ver el mensaje de que el nombre a ya esta definido.
