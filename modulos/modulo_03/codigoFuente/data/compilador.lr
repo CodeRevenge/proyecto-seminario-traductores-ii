@@ -18,11 +18,11 @@
 34	1	DefLocal
 35	0	Sentencias
 35	2	Sentencias
-36	4	Sentencia
-36	6	Sentencia
-36	5	Sentencia
-36	3	Sentencia
-36	2	Sentencia
+36	4	SentenciaIdent
+36	6	SentenciaIf
+36	5	SentenciaWhile
+36	3	SentenciaReturn
+36	2	SentenciaLlamada
 37	0	Otro
 37	2	Otro
 38	3	Bloque
@@ -32,24 +32,24 @@
 40	2	Argumentos
 41	0	ListaArgumentos
 41	3	ListaArgumentos
-42	1	Termino
-42	1	Termino
-42	1	Termino
-42	1	Termino
-42	1	Termino
+42	1	TerminoLlamada
+42	1	TerminoIdent
+42	1	TerminoEntero
+42	1	TerminoReal
+42	1	TerminoCadena
 43	4	LlamadaFunc
 44	1	SentenciaBloque
 44	1	SentenciaBloque
 45	3	Expresion
-45	2	Expresion
-45	2	Expresion
-45	3	Expresion
-45	3	Expresion
-45	3	Expresion
-45	3	Expresion
-45	3	Expresion
-45	3	Expresion
-45	1	Expresion
+45	2	ExpresionSuma
+45	2	ExpresionNot
+45	3	ExpresionMul
+45	3	ExpresionSumaDos
+45	3	ExpresionRelac
+45	3	ExpresionIgualdad
+45	3	ExpresionAnd
+45	3	ExpresionOr
+45	1	ExpresionTerm
 95	46
 0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	-3	1	2	3	4	0	6	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	-1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0

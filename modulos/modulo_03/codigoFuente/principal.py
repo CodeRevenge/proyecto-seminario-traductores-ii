@@ -3,7 +3,7 @@ import sys
 from tkinter import Tk
 from tkinter import messagebox
 from tkinter.filedialog import askopenfilename
-from analizadorSintactico import AnalizadorSintactico
+from src.analizadorSintactico import AnalizadorSintactico
 
 def abrir_archivo():
     root = Tk()
@@ -11,7 +11,7 @@ def abrir_archivo():
     direccion = ""
     instrucciones = ''
     while not direccion:
-        direccion = askopenfilename(initialdir="./", filetypes=[("C", "*.c")])
+        direccion = askopenfilename(initialdir="./tests/", filetypes=[("C", "*.c")])
         if not direccion:
             if not messagebox.askretrycancel(message="No se selecciono ningun archivo, ¿Desea reintentarlo?", title="No se selecciono archivo"):
                 return False
@@ -35,6 +35,7 @@ def main():
         # resultado = analizador.analizadorSintactico(cadena)
         resultado = analizador.analizadorSintacticoEnteros(cadena)
         if resultado:
+            analizador.arbol.arbol.muestra()
             print("El código compilo correctamente")
     # Fin del if-else
 
