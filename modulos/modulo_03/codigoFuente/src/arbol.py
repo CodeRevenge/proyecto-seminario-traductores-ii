@@ -1,28 +1,5 @@
 class Reglas:
     def __init__(self):
-        self.IDENTIFICADOR = 0
-        self.ENTERO = 1
-        self.REAL = 2
-        self.CADENA = 3
-        self.TIPO = 4
-        self.OPSUMA = 5
-        self.OPMUL = 6
-        self.OPRELAC = 7
-        self.OPOR = 8
-        self.OPAND = 9
-        self.OPNOT = 10
-        self.OPIGUALDAD = 11
-        self.PUNTOYCOMA = 12
-        self.COMA = 13
-        self.PARENTESISABIERTO = 14
-        self.PARENTESISCERRADO = 15
-        self.LLAVEABIERTA = 16
-        self.LLAVECERRADA = 17
-        self.IGUAL = 18
-        self.IF_ = 19
-        self.WHILE_ = 20
-        self.RETURN_ = 21
-        self.ELSE_ = 22
         self.PESO = 23
         self.PROGRAMA = 24
         self.DEFINICIONES = 25
@@ -59,6 +36,7 @@ class Programa(Nodo):
 
     def muestra(self):
         if self.definiciones:
+            print('Programa')
             self.definiciones.muestra()
 
 class Definiciones(Nodo):
@@ -69,8 +47,10 @@ class Definiciones(Nodo):
 
     def muestra(self):
         if self.definicion:
+            print('Definicion')
             self.definicion.muestra()
         if self.definiciones:
+            print('Definiciones')
             self.definiciones.muestra()
 
 class DefinicionVar(Nodo):
@@ -80,6 +60,7 @@ class DefinicionVar(Nodo):
 
     def muestra(self):
         if self.defvar:
+            print('DefVariables')
             self.defvar.muestra()
 
 class DefinicionFunc(Nodo):
@@ -89,6 +70,7 @@ class DefinicionFunc(Nodo):
 
     def muestra(self):
         if self.defFunc:
+            print('DefFunciones')
             self.defFunc.muestra()
 
 class DefVar(Nodo):
@@ -102,6 +84,7 @@ class DefVar(Nodo):
         print(self.tipo)
         print(self.identificador)
         if self.listaVar:
+            print('ListVariables')
             self.listaVar.muestra()
 
 class ListaVar(Nodo):
@@ -113,6 +96,7 @@ class ListaVar(Nodo):
     def muestra(self):
         print(self.identificador)
         if self.listaVar:
+            print('ListaVariables')
             self.listaVar.muestra()
 
 class DefFunc(Nodo):
@@ -127,8 +111,10 @@ class DefFunc(Nodo):
         print(self.tipo)
         print(self.identificador)
         if self.Parametros:
+            print('DefFunciones')
             self.Parametros.muestra()
         if self.BloqFunc:
+            print('DefFunciones')
             self.BloqFunc.muestra()
 
 class Parametros(Nodo):
@@ -142,6 +128,7 @@ class Parametros(Nodo):
         print(self.tipo)
         print(self.identificador)
         if self.ListaParam:
+            print('Parametros')
             self.ListaParam.muestra()
 
 class ListaParam(Nodo):
@@ -155,6 +142,7 @@ class ListaParam(Nodo):
         print(self.tipo)
         print(self.identificador)
         if self.ListaParam:
+            print('ListaParametros')
             self.ListaParam.muestra()
 
 class BloqFunc(Nodo):
@@ -164,6 +152,7 @@ class BloqFunc(Nodo):
 
     def muestra(self):
         if self.DefLocales:
+            print('BloqueFuncion')
             self.DefLocales.muestra()
 
 class DefLocales(Nodo):
@@ -174,8 +163,10 @@ class DefLocales(Nodo):
 
     def muestra(self):
         if self.DefLocal:
+            print('DefLocales')
             self.DefLocal.muestra()
         if self.DefLocales:
+            print('DefLocales')
             self.DefLocales.muestra()
 
 class DefLocalVar(Nodo):
@@ -185,6 +176,7 @@ class DefLocalVar(Nodo):
 
     def muestra(self):
         if self.DefVar:
+            print('DefLocalVar')
             self.DefVar.muestra()
 
 class DefLocalSent(Nodo):
@@ -194,6 +186,7 @@ class DefLocalSent(Nodo):
 
     def muestra(self):
         if self.Sentencia:
+            print('DefLocalSent')
             self.Sentencia.muestra()
 
 class Sentencias(Nodo):
@@ -204,8 +197,10 @@ class Sentencias(Nodo):
 
     def muestra(self):
         if self.Sentencia:
+            print('Sentencias')
             self.Sentencia.muestra()
         if self.Sentencias:
+            print('Sentencias')
             self.Sentencias.muestra()
 
 class SentenciaExpre(Nodo):
@@ -217,6 +212,7 @@ class SentenciaExpre(Nodo):
     def muestra(self):
         print(self.identificador)
         if self.Expresion:
+            print('SentenciasExpre')
             self.Expresion.muestra()
 
 class SentenciaIf(Nodo):
@@ -228,10 +224,13 @@ class SentenciaIf(Nodo):
 
     def muestra(self):
         if self.Expresion:
+            print('SentenciasIf')
             self.Expresion.muestra()
         if self.Sentencia:
+            print('SentenciasIf')
             self.Sentencia.muestra()
         if self.Otro:
+            print('SentenciasIf')
             self.Otro.muestra()
 
 class SentenciaWhile(Nodo):
@@ -242,8 +241,10 @@ class SentenciaWhile(Nodo):
 
     def muestra(self):
         if self.Expresion:
+            print('SentenciasWhile')
             self.Expresion.muestra()
         if self.Bloque:
+            print('SentenciasWhile')
             self.Bloque.muestra()
 
 class SentenciaReturn(Nodo):
@@ -253,6 +254,7 @@ class SentenciaReturn(Nodo):
 
     def muestra(self):
         if self.ValorRegresa:
+            print('SentenciasReturn')
             self.ValorRegresa.muestra()
 
 class SentenciaFunc(Nodo):
@@ -262,6 +264,7 @@ class SentenciaFunc(Nodo):
 
     def muestra(self):
         if self.LlamadaFunc:
+            print('SentenciasFunc')
             self.LlamadaFunc.muestra()
 
 class Otro(Nodo):
@@ -271,6 +274,7 @@ class Otro(Nodo):
 
     def muestra(self):
         if self.SentenciaBloque:
+            print('Otro')
             self.SentenciaBloque.muestra()
 
 class Bloque(Nodo):
@@ -280,6 +284,7 @@ class Bloque(Nodo):
 
     def muestra(self):
         if self.Sentencias:
+            print('Bloque')
             self.Sentencias.muestra()
 
 class ValorRegresa(Nodo):
@@ -289,6 +294,7 @@ class ValorRegresa(Nodo):
 
     def muestra(self):
         if self.Expresion:
+            print('ValorRegresa')
             self.Expresion.muestra()
 
 class Argumentos(Nodo):
@@ -299,8 +305,10 @@ class Argumentos(Nodo):
 
     def muestra(self):
         if self.Expresion:
+            print('Argumentos')
             self.Expresion.muestra()
         if self.ListaArgumentos:
+            print('Argumentos')
             self.ListaArgumentos.muestra()
 
 class ListaArgumentos(Nodo):
@@ -311,8 +319,10 @@ class ListaArgumentos(Nodo):
 
     def muestra(self):
         if self.Expresion:
+            print('ListaArgumentos')
             self.Expresion.muestra()
         if self.ListaArgumentos:
+            print('ListaArgumentos')
             self.ListaArgumentos.muestra()
 
 class TerminoFunc(Nodo):
@@ -322,6 +332,7 @@ class TerminoFunc(Nodo):
 
     def muestra(self):
         if self.LlamadaFunc:
+            print('TerminoFunc')
             self.LlamadaFunc.muestra()
 
 class TerminoIdent(Nodo):
@@ -330,6 +341,7 @@ class TerminoIdent(Nodo):
         self.identificador = identificador
 
     def muestra(self):
+        print('TerminoIdent')
         print(self.identificador)
 
 class TerminoEntero(Nodo):
@@ -338,6 +350,7 @@ class TerminoEntero(Nodo):
         self.entero = entero
 
     def muestra(self):
+        print('TerminoEntero')
         print(self.entero)
 
 class TerminoReal(Nodo):
@@ -346,6 +359,7 @@ class TerminoReal(Nodo):
         self.real = real
 
     def muestra(self):
+        print('TerminoReal')
         print(self.real)
 
 class TerminoCadena(Nodo):
@@ -354,6 +368,7 @@ class TerminoCadena(Nodo):
         self.cadena = cadena
 
     def muestra(self):
+        print('TerminoCadena')
         print(self.cadena)
 
 class LlamadaFunc(Nodo):
@@ -365,6 +380,7 @@ class LlamadaFunc(Nodo):
     def muestra(self):
         print(self.identificador)
         if self.Argumentos:
+            print('TerminoLlamadaFunc')
             self.Argumentos.muestra()
 
 class SentenciaBloque(Nodo):
@@ -374,6 +390,7 @@ class SentenciaBloque(Nodo):
 
     def muestra(self):
         if self.Sentencia:
+            print('SentenciaBloque')
             self.Sentencia.muestra()
 
 class Expresion(Nodo):
@@ -383,6 +400,7 @@ class Expresion(Nodo):
 
     def muestra(self):
         if self.Expresion:
+            print('Expresión')
             self.Expresion.muestra()
 
 class ExpresionSuma(Nodo):
@@ -392,6 +410,7 @@ class ExpresionSuma(Nodo):
 
     def muestra(self):
         if self.Expresion:
+            print('ExpresiónSuma')
             self.Expresion.muestra()
 
 class ExpresionNot(Nodo):
@@ -401,6 +420,7 @@ class ExpresionNot(Nodo):
 
     def muestra(self):
         if self.Expresion:
+            print('ExpresiónNot')
             self.Expresion.muestra()
 
 class ExpresionOp(Nodo):
@@ -411,8 +431,10 @@ class ExpresionOp(Nodo):
 
     def muestra(self):
         if self.ExpresionUno:
+            print('ExpresiónOperador')
             self.ExpresionUno.muestra()
         if self.ExpresionDos:
+            print('ExpresiónOperador')
             self.ExpresionDos.muestra()
 
 class ExpresionTermino(Nodo):
@@ -422,6 +444,7 @@ class ExpresionTermino(Nodo):
 
     def muestra(self):
         if self.Termino:
+            print('ExpresiónTermino')
             self.Termino.muestra()
 
 class Arbol(Reglas):
@@ -452,7 +475,7 @@ class Arbol(Reglas):
             self.arbol.append(defvar)
         elif entero == self.LISTAVAR:
             if simbolos:
-                listavar = ListaVar(simbolos[2],self.arbol.pop())
+                listavar = ListaVar(simbolos[1],self.arbol.pop())
                 self.arbol.append(listavar)
             else:
                 listavar = ListaVar(None, None)
@@ -547,7 +570,7 @@ class Arbol(Reglas):
                 self.arbol.append(argumentos)
         elif entero == self.TERMINO:
             if tipo == 'TerminoLlamada':
-                termino = TerminoIdent(self.arbol.pop())
+                termino = TerminoFunc(self.arbol.pop())
                 self.arbol.append(termino)
             elif tipo == 'TerminoIdent':
                 termino = TerminoIdent(simbolos[-1])
@@ -562,7 +585,7 @@ class Arbol(Reglas):
                 termino = TerminoCadena(simbolos[-1])
                 self.arbol.append(termino)
         elif entero == self.LLAMADAFUNC:
-            llamada = LlamadaFunc(simbolos[0], self.arbol.pop())
+            llamada = LlamadaFunc(simbolos[-1], self.arbol.pop())
             self.arbol.append(llamada)
         elif entero == self.SENTENCIABLOQUE:
             if simbolos[-1] == 'Sentencia':

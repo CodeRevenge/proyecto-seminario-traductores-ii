@@ -4,6 +4,7 @@ from tkinter import Tk
 from tkinter import messagebox
 from tkinter.filedialog import askopenfilename
 from src.analizadorSintactico import AnalizadorSintactico
+from src.analizadorSemantico import AnalizadorSemantico
 
 def abrir_archivo():
     root = Tk()
@@ -24,18 +25,15 @@ def abrir_archivo():
 def main():
     cadena = abrir_archivo()
     if not cadena:
+        print("El código compilo correctamente")
         return
-
-    # cadena = input('Escribe la cadena a analizar: ')
-    # Verificamos que la cadena no este vacia
-    if len(cadena) <= 0:
-        print(cadena + " No es una cadena valida")
     else:
         analizador = AnalizadorSintactico()
         # resultado = analizador.analizadorSintactico(cadena)
         resultado = analizador.analizadorSintacticoEnteros(cadena)
         if resultado:
             analizador.arbol.arbol.muestra()
+            analizadorSem = AnalizadorSemantico(analizador.arbol.arbol)
             print("El código compilo correctamente")
     # Fin del if-else
 
